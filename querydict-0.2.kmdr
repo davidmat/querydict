@@ -1,0 +1,376 @@
+<!DOCTYPE UI><UI version="3.0" stdsetdef="1">
+<class>Querydict</class>
+<widget class="Dialog">
+    <property name="name">
+        <cstring>Querydict</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>598</width>
+            <height>479</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>QueryDict - an interface for dict</string>
+    </property>
+    <property name="icon">
+        <pixmap>image0</pixmap>
+    </property>
+    <property name="mouseTracking">
+        <bool>false</bool>
+    </property>
+    <property name="associations" stdset="0">
+        <stringlist>
+            <string></string>
+            <string></string>
+            <string></string>
+        </stringlist>
+    </property>
+    <widget class="CloseButton">
+        <property name="name">
+            <cstring>Exit</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>484</x>
+                <y>440</y>
+                <width>103</width>
+                <height>32</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>E&amp;xit</string>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string></string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="ExecButton">
+        <property name="name">
+            <cstring>Save</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>440</y>
+                <width>63</width>
+                <height>32</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>S&amp;ave</string>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string>@File.write(@Input.savefile, @Output.text )</string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="ExecButton">
+        <property name="name">
+            <cstring>Copy</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>240</x>
+                <y>440</y>
+                <width>63</width>
+                <height>32</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>&amp;Copy</string>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string></string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="Label">
+        <property name="name">
+            <cstring>Label11</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>40</y>
+                <width>208</width>
+                <height>17</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Results</string>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string></string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="Label">
+        <property name="name">
+            <cstring>Label10</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>43</y>
+                <width>100</width>
+                <height>17</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>History</string>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string></string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="PixmapLabel">
+        <property name="name">
+            <cstring>PixmapLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>10</x>
+                <y>10</y>
+                <width>22</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="pixmap">
+            <pixmap>image1</pixmap>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string></string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="ExecButton">
+        <property name="name">
+            <cstring>Clear</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>484</x>
+                <y>11</y>
+                <width>20</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+        <property name="pixmap">
+            <pixmap>image2</pixmap>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string>@Entry.clear</string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="ScriptObject">
+        <property name="name">
+            <cstring>ScriptObject2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>408</x>
+                <y>440</y>
+                <width>32</width>
+                <height>32</height>
+            </rect>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string>@Output.setText(@exec(dict "@History.selection"))</string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="ExecButton">
+        <property name="name">
+            <cstring>ClearHistory</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>440</y>
+                <width>120</width>
+                <height>32</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Clear Histor&amp;y</string>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string>@History.clear</string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="ListBox">
+        <property name="name">
+            <cstring>History</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>11</x>
+                <y>66</y>
+                <width>120</width>
+                <height>368</height>
+            </rect>
+        </property>
+        <property name="populationText">
+            <string></string>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string></string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="LineEdit">
+        <property name="name">
+            <cstring>Entry</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>38</x>
+                <y>12</y>
+                <width>440</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string></string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="TextBrowser">
+        <property name="name">
+            <cstring>Output</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>157</x>
+                <y>66</y>
+                <width>430</width>
+                <height>340</height>
+            </rect>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string></string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="ExecButton">
+        <property name="name">
+            <cstring>LookupSelected</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>410</y>
+                <width>430</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Loo&amp;k Up Selected Text</string>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string>@History.addUniqueItem(@Output.selection)
+
+@Output.setText(@exec(dict "@Output.selection"))
+
+</string>
+            </stringlist>
+        </property>
+    </widget>
+    <widget class="ExecButton">
+        <property name="name">
+            <cstring>Lookup</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>510</x>
+                <y>11</y>
+                <width>77</width>
+                <height>26</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>L&amp;ook Up</string>
+        </property>
+        <property name="associations" stdset="0">
+            <stringlist>
+                <string>@Output.setText(@exec(dict "@Entry.text"))
+
+@History.addUniqueItem(@Entry.text)</string>
+            </stringlist>
+        </property>
+    </widget>
+</widget>
+<images>
+    <image name="image0">
+        <data format="XPM.GZ" length="4094">789c8d97596fdc480ec7dff3298cf02d1870d4925a2a61b10f499cf8767cc4e7601e588762c7edbb1ddb59ec775feacf8a728cbd334d1bc8cf3caa8a64b13abfbf5a38dcda5878f5fb8bdbb9cc4fc34238919b8557f1eefcfcf18f3ffffd9f172fcb72417f26ae5d285ffef6e2e5f67c212c6c5e5ea40164a640053ee0f581abbe2e2ad33f0c3c9d4edb6905de01378380b7076ecaa66eccbf0657838057c14de39a7a60fa6cdc15be87deb86dba660abe073b65c4a71370d77863790f166507fdd4d88978e827603f08f82873347b2e47eea05f03076541bc9dcc29eb77c15119f17831739ff9169cdac2982c1fa993007f5e06f7eda409e04de3ce05e4836f066e0bd547f07de6b2417e18fb69276d9579cdb8eb02f24521730cf0a72f995340fdf81a5c8efef3cc75e6d6b8ebcd9f374636ffbd91cdfe185c7dd3cb19b86e9b76025e1919cd46b67eddf9d0824ddf4861ebc939b86dbb16f5e57563296d3d790b766a8ffc09f2dd769df3c657997db0feb3fd8b8ad5fb5de6604ca85febbb5accff001cdad4a25eb465ac7aeb871edcbb496bf945bddc44aa003da3deae765387f393cbdc389c5f104fb58db3fe3eccdc66fdf2c8e80741fdd4bacdf64566e7709fc8fcf502d8fa827aa87567fe74642c2ed7e711ec9c583c8e604d9fb3fbb437b2e5a731962ed8fd41bfaab77776de93ccc1a19efc11ec35c1165fc0c12567fdef47367ff4ab8baecf6ce78bea6ff3c2fc535738eb8faf0377453771d67f57994b63b90357ddb4b37e337de5eb68f979036e7c15a167026bc374b6df55633daff5efa2b1fa5bbef7c1da5f9d9df703384ab2fd32f2d525e9ed3e0bfa434a9f22fa8b12b8925a109feb91adfec887d4be377bc63cd3f67562f30ff5151faa887ad2eac8383fa19e12bd583fd099b10e308b7f01d6fd89dd67e44b7a3f3196de384ca3f5b7cfec92d503f17da58cfb45a897af4367eb33facd3721263b3ffac1b72a369f4ae320e62f279983c5e725b0b697b77efccec8b75c82bb20399f9807dec722d93c417dbd86cbfbbd3656bdad8f79e063e8f3fe500f9f942d3fa8a7ef07813dde8f50c489c5a3fbcc555e0ff7214c6299f5f0d76a4c93e51ff324d48320fe2763f5b7f356e0e920d0cf3387dc9fa85fd00728eb29736bf168cd581f249b6f783f55db06cbdffec8b6dfda38ba64ef15decfa01732eb6d3f4ef76ff1f11e844ec5e25bbc2e76d91ff90fda6df6be09ea1bbc8adde787cc21f723ea178b9892bd2f986f51f317d10ffc3af3345a3c9fb94b761f4fc1a5b2f5df7ae668fba187cc7db2fb837911ebd8583c7699b35ef01ee86a219f578c53d95b7f221feaad027ff457d4fcd93c21db6f9b2ab327dca7411b6d3f789fa2e62bda3c7d344e75b2fe9a7de3ec6fe71315dbefeec896cf95ccdee2f3e3c8765ef4eba035bdd8fe7c2a93bd67968f98dadee60fdea39806811eef4fec0781fed03875bdcd53bccfa950b67e47fe347a69f78728b3f4964fcc9b54256ff67c30b27ddfe9c0f537bd30b81b04fe788f920c02c63c495ec5786964cbb7f9fbbee86d5ee2bee9979f90f5f3912d5fb6bfe1f8c697235b7fda79878ff16c649b9fa857ea558cb19eae5ee4fae27c7d3b0818f5ec651030ee1fd26df1317f7b0404633ef5f80cbc3dffe7f2cd9e89258be730fedb243c611f3971ffa4249667ec3f3d29fd93f627cfd89f3e636ff13fff22673cfbbff14f7f9073950bbefc87f1aff89a6ff896e77cf7b7fbffc2f7fcc08ffc955ff31b7ecb8bfcee99f8ef35f2122ff30aaff21aaff3066ff207ded275b69fd9ff8c7778973ff21eeff3011ff2111f73c1132e9fb03fe58a6b9e72c32d3bee888948c853a04889fabfd89fd3273aa153fa4c6734a373bad0df4bbaa26bbaa15b3af98bfd05cdf996eee80bddd3033dd2577a4d6fe82d2dea5fdef1edcfe7a5f71a7d49ed97698556694d3dd6698336e9036dd1364f68e717fb5dfa487bb44f07744847744c054da8a48a6a9a52432db95fec3bdad3e625d1ffe5f1863e3e11df683ec989d2a97c96b3eff632d3fce7fe9573b9904bb5b9926bb9915b3e96b9dcc917b997871fe28b7a44791c8476e4abbc9637f256bd16e59dbc97255996155995b5eff75166a3acab664336e5032dcb966ccb8eecca47d993fd1fed7ff298c9811cca91ae742c85d244d6a4d46f846bcfddf79f7c07a9d543e5e57ffff5e27f57a7f32a</data>
+    </image>
+    <image name="image1">
+        <data format="XPM.GZ" length="3566">789ca595d96e5c370c86effd1483f02e2898398b3614bdc8eac4891d3bab93a2179474e47d1f6f29faee55489e033488a72e8a999b0fe291a89f3fa9470f67db9bebb3878f562e16b4d84bb3b44be7b387f9f2e8e8f6f73f7efb73e541dbceeabf31fdac7df0cbca83adc52ccd364e8e87ef80fb15603e6f5de045ccca3e74cc6713f7cc4979089e7977e2c27ca25cc832df0a774dc8cca0dc86c0bc3632c9fe1f9403c97eaf9449d7df2b0f9498f7948bf2a970df44c37ca3dcc6c8dc29f7cafdc4a2c7eac849f4d852b689f307d5a78f89f307d5a34f89ef0b2f27e67c40f3edb33036ca4366fde05ab924be2fb4c266aee71d8d9ce7ccef941b5d5f9d58f2d7f34d2bfb118c9ce53ee3f72673bea4fa199b1dafb713cbf7aaa70959ce23651a387fba54ce03d7070e856d5bf83c3a56ee06d96f317291fbcc2766bf112af745f6bb9a98f3a31d65a3eb5b13f33a44655b1a8ebf9958f2517f5aa7e7a97fad2f52bf6662d9ef853215a9f767e554a45e8f95b330493d9b7a5fd68bcac8725fda57367affcd89393fb0ca83ec87b25fdb85c8f982f463ebe67abee8dbf545fc41a25757cf275e7fa35c34fe5cd835caa24f3ff94bf4edc7fde982d95823f781e7ca4ef447d1bb963b885e41b8ea27faebbaebf53e1f995d6f22eb49d23fce759acfc0ec0d891fa1532eea3fa95f3031cbf7a247a8fa8b7ea7caa5883fa57f62ad97e423fe4d360edc2f60849dd5fb1e287bcd47fa279b41fc8de287a1f6b7f493ec57ba28f30dbe0ad7edc49f3cbf9ada2f59e629ebdb74759e89de4f849dfa89f8fe4defd4df74aeece43eb0ce6c9dfa03d85f8d77a33f797e36c11ad107de0ad775e9f743e5a1f0fc836d61df6a7d588f26da90d93ff89a39993af038fe93b0533f5116aedfcbfd3d7376aa3f38613fd6f7d9776efb5a50c98fe76f6b2a8b5fbf305bef8b9cc7f5685dcd9ff54227ec83e6cbfdd392f559f4de608e3e17a9ef53e61cc67ef9f69dbbb977727fe47eeb1a9f548fdd89657feeafae3339ca7c94ef3bebe5bd009e7f5d5ff793f9c17a7566fc1eb87f3a1b46ffb37e5df64ee725f7433f0f4de1f70af8bdec635d177ff17cec8bf7c2b0261c3af12f6e0bd3583f9e4fc69053e67960a2efe53d409e07d69293798c5c2feb689c37ec37eb0365793f597f1b83d7f783fd69ebf9f2fe20fbd1b571d48bf5772e92de9fe7b9a3ba3ff71ff0fcf75d9a8b5f90e789b714b5bfb81f4293753e21cfd760d2207e41f67ba0581f5466f64b8869cc9feb5d1f2bd50378de862191fa8bdf3b3259fd88dc1f145292f9815caf6807cd1f797e44ca8deacdf9c7fadae93acfbb5826e6fe4ff361aefe627fa47a3be90764ffa73c44f127723f0e4dd1fcb716f7fffd9f7804248c98ee1d9f71c0823bb88b7bf78adfc7033cc4233cc6133cbd47fc199ee3052ef012aff01a6ffe35fe16bfe1637c824ff1193ec717b88a2f97c6bfc2357c8d6f701d37ea296f7113b7f0dd323df13d7ec08ff8093fe3367ec1af38c706dbe5fa63873d1ab4e8d06300040082b8ac5e9020c30005766017f6601f0ee07069fc111cc3099cc2199cc3052ce012aeee8e876bb8815bf8068fe1093c8567f01caee0c5cfe361155ec22b5883d7f006d66103dec2266cdd755f7807efe1037c844ff019b6e10b7c85393477eb092d74d083010b0e7c6d60fc31fa9ff10444142951a6da8ab443bbcbfd407bb44f07744847744c273f73cf0ff1a77446e774418bbba27f88bfa42bbaaed13f75e6ddf55af6fbcff17ffdbaf23746f87abe</data>
+    </image>
+    <image name="image2">
+        <data format="XPM.GZ" length="2414">789c75d5594f23391000e0777e4544bda1554d1f6eb75bab7d08f715ee199819ed83af8600e10ce768fffbbaab2aad301a14047c72f92a979d2f4b83b383d160e9cbc2e3d44ec77ee02fecc360293c4d266f3ffffde7d7c262ae07dd4f5e0c8ac5bf1616d10dfc60eff62676389c26406d94c9326abc2437aa115bb253560c64af9cf8b6b3c954cc72f284acaa427c45d6c92599e633b556d2ff826cf56cbe9bce8d3595b821fbba153fb1cd6cbd63f16c3d4372305ebc4b8e2688977bd3fae084dcceda61dc9bd77f2a8ed27fa737f75feeada8fd9bb8cd2af25b679b955ac67f62cffae3bbb895f1b67a73ff33725eccf275cf4efbe7f863764a9fa1f66d7291dc503b9da7ad1a95f37c9eac53be2df99cdc68275e27bbdc65811cd83a648ec65b61372ee7f8efe4a08a9ccfd7906313738ac7d7ce2ed34d5e931fc9b9cd721e3f928bbac83cf94eac793edc279bd248fc1e39d563c1fb1db16d55d07ef19aec6b9bb5e40772b4b1a4e207ecec339715dcde92f33ae47c3e349faf9c92f86d71556af211592773fc54ac4bdeff1ad9e820a6f3f4de05c57e2687643e8fafe2a8f8bc6b72eb73c5e777d03914be54b45ed8246b6f2a5a0f6e906b976bbedc743ea9fc8dc4d3fe83f572ff80ea27385f72bd02d567f05e65743eb026ae241fad588bd77bd37a61280e159d07d0fe42f06d45ef0bd0fd0badb705e7efb073cc4359713dd1fd8f45509ae7a77a89a5775caf40f5195528241fefe25251bd00d54bac7cc8793f2376508ae7a77a8b3a68ce1750bdc53a5d6f5eef86b896f5ec884dc5f9db13379aea0f56c92658cdf54ae7116df035e75f935d0835d7fb8b388ab9bf0f5ef3fcdc1e8255bc3e7a4f630c75c1e745f7af2d832bf8be55ec586aae17aa8f5607a3395f37e228f54def5b7a9eace1f9e87d6e53b995bc1e25ae14bf5f3fc4d6703eafc4c1707ee87eb53e5625e79fde933644cdc652dc547c7facd8723ef17066cdfb7362c7ebc7a3de3c5e264e578c5cf4e6f7e0589c8e889c8b5b593ff4b6fc7d878036fd767ffef0771e7a0c9f47494cc416cfd3df0b1ca7cf9f622ef10aaf53d4046f3e8b497358bcc53bbcc7077cfc649ceebf293ee133bee02bbee13b0ee72325668ccbb882abb886ebb8819bb885dbb8338beb637671847bb88f07788847788c27f815bfe169b7be7eae319ee177fc8119e65860890a2bd458a3c1611fe3b00104000b0e4bf01020420be77001e3b998315cc2155cc3046ee016eee01e1ee011a6783a17e3e0099ee125f57f85b7d4fe00ef3084659c1fa71b690556618ddad761033661abdbdb871887a7b00d3bb00b23d883fdb4d7f1871cca48b80b07700847700c27bfe5673e6a98faef7ec8f37f7f2ffc0fa4322577</data>
+    </image>
+</images>
+<connections>
+    <connection>
+        <sender>Entry</sender>
+        <signal>returnPressed()</signal>
+        <receiver>Lookup</receiver>
+        <slot>startProcess()</slot>
+    </connection>
+    <connection>
+        <sender>Copy</sender>
+        <signal>clicked()</signal>
+        <receiver>Output</receiver>
+        <slot>copy()</slot>
+    </connection>
+    <connection>
+        <sender>History</sender>
+        <signal>highlighted(const QString&amp;)</signal>
+        <receiver>ScriptObject2</receiver>
+        <slot>execute()</slot>
+    </connection>
+    <connection>
+        <sender>Exit</sender>
+        <signal>clicked()</signal>
+        <receiver>Querydict</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>Entry</tabstop>
+    <tabstop>Lookup</tabstop>
+    <tabstop>Clear</tabstop>
+    <tabstop>History</tabstop>
+    <tabstop>LookupSelected</tabstop>
+    <tabstop>ClearHistory</tabstop>
+    <tabstop>Save</tabstop>
+    <tabstop>Copy</tabstop>
+    <tabstop>Output</tabstop>
+    <tabstop>Exit</tabstop>
+</tabstops>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
